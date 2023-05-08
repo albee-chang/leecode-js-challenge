@@ -5,10 +5,10 @@
 
 // Please solve it without the built-in Array.map method.
 
-function map(arr: number[], fn: (n: number, i: number) => number): number[] {
-    let result = []
+function map<T, U>(arr: T[], fn: (value: T, index: number) => U): U[] {
+    const mappedArray: U[] = [];
     for (let i = 0; i < arr.length; i++) {
-        result.push(fn(arr[i], i))
+      mappedArray.push(fn(arr[i], i));
     }
-    return result
-};
+    return mappedArray;
+  }
